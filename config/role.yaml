@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default # <-- change to match your namespace
+  name: super-role
+rules:
+ - apiGroups: ["*"] 
+   resources: ["*"] # <-- * is too strong for a permission, change to match only the resources you wish to manipulate
+   verbs: ["create", "delete"]

@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows service account default to read pods in the "bonsai" namespace.
+# You need to already have a Role named "pod-reader" in that namespace.
+kind: RoleBinding
+metadata:
+  name: super-binder
+  namespace: default # <-- change to match your namespace
+subjects:
+# You can specify more than one "subject"
+- kind: ServiceAccount
+  name: default
+  namespace: default # <-- change to match your namespace
+roleRef:
+  # "roleRef" specifies the binding to a Role / ClusterRole
+  kind: Role #this must be Role or ClusterRole
+  name: super-role # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io

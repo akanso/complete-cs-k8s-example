@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kube-complete-example
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: kube-complete-example
+        image: kube-complete-example:1.0
+        imagePullPolicy: IfNotPresent # available options: Always, IfNotPresent, Always
+        env:
+        - name: NAMESPACE
+          value: "default"  # change to match the namespace of your objects e.g. kube-system, if empty, "default" is used
+        resources:
+          limits:
+            cpu: "0.2"
+            memory: "200Mi"
+          requests:
+            cpu: "0.1"
+            memory: "100Mi"
