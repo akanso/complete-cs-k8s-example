@@ -62,7 +62,7 @@ make cleanup
 
 ## Manual testing
 
-To test that the pod is deployed properly, you can create a pod that its container periodically exits (every 60 seconds):
+After running the code we should see the pods created and running.
 
 ```
 kubectl get po
@@ -71,6 +71,8 @@ my-deployment-6f79b686c4-qcjrb   1/1     Running       0          27m
 my-deployment-6f79b686c4-kcdqm   1/1     Running       0          27m
 my-pod                           1/1     Running       0          27m
 ```
+
+We can look into the env variables of the deployment pods: 
 
 ```
 kubectl exec -ti my-deployment-6f79b686c4-qcjrb -- env
