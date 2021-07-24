@@ -1,6 +1,6 @@
 # Introduction 
 
-This project is just to show a more complete example of using the K8s CSharp Client library.
+This project is just to show a more complete example of using the K8s [CSharp Client library](https://github.com/kubernetes-client/csharp).
 
 It uses the most common patterns in deployments and pods such as setting environment variables, mounting volumes, using init containers, etc.
 
@@ -92,10 +92,12 @@ We should see all the env variables we set from the secret, configmap, and downw
 
 ```
 kubectl exec -ti my-deployment-6f79b686c4-qcjrb -- curl http://localhost:80
-<!DOCTYPE html>< html >< head >< style >body {background - color: red;}</style></head><body><h1>The Red One</h1><p>This is red nginx http server</p></body></html>
+<!DOCTYPE html><html><body><h1 style=background-color:DodgerBlue;>Hello C-Sharp!</h1></body></html>
 ```
-
 We should see nginx returning to content of the configmap we mounted as index.html
 
+or you can use your machine browser, and direct it to the <node_IP_address:30001>, where port 30001 is nodePort we deifined in our service.
 
+
+![browser](./media/browser.png)
 

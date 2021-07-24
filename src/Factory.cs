@@ -272,7 +272,7 @@ namespace complete
                 },
                 Data = new Dictionary<string, string>()
                 {
-                    ["html"] = "<!DOCTYPE html>< html >< head >< style >body {background - color: red;}</style></head><body><h1>The Red One</h1><p>This is red nginx http server</p></body></html>",
+                    ["html"] = "<!DOCTYPE html><html><body><h1 style=background-color:DodgerBlue;>Hello C-Sharp!</h1></body></html>",
                 },
             };
             return config;
