@@ -394,10 +394,7 @@ namespace complete
                             Name = "my-container",
                             Image = "busybox",
                             ImagePullPolicy = "IfNotPresent",
-                            Command =  new List<string>
-                            {
-                                "sleep","10000"
-                            },
+                            Command =  new List<string>{"sh", "-c", "while true; do nc -z -v my-service 80; sleep 10; done"},
                             Env = new[]
                             {
                                 new V1EnvVar

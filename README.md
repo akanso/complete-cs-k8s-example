@@ -72,6 +72,15 @@ my-deployment-6f79b686c4-kcdqm   1/1     Running       0          27m
 my-pod                           1/1     Running       0          27m
 ```
 
+We can see the logs of `my-pod` checking on the nginx deployment
+
+```
+kubectl logs my-pod -f
+my-service (10.152.183.98:80) open
+my-service (10.152.183.98:80) open
+my-service (10.152.183.98:80) open
+```
+
 We can look into the env variables of the deployment pods: 
 
 ```
